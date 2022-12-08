@@ -9,7 +9,7 @@ import { TodoModule } from './todo/todo.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.v8nqkj7.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot(process.env.UrlDB), /*вариант с указанием http://0.0.0.0:8081 так же не дает результата*/
     TodoModule
   ],
   controllers: [AppController],
